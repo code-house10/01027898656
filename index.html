@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
-  <title>الشركة المتخصصة لنقل الأثاث | خدمات متكاملة</title>
+  <title>الأندلس إكسبريس لنقل الأثاث | خدمات متكاملة</title>
   <meta name="description" content="نقل عفش آمن وسريع في القاهرة والجيزة. تغطية شاملة للتجمع، أكتوبر، الشيخ زايد، والمعادي. اتصل بنا الآن.">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -200,6 +200,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* --- Three floating direct-call numbers --- */
+    .floating-phone-stack {
+      position: fixed;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .65rem;
+      direction: ltr;
+    }
+
+    .floating-phone-btn {
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .7rem;
+      padding: .8rem 1rem;
+      border-radius: 9999px;
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+      letter-spacing: .02em;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, .25);
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      animation: floatingPhonePulse 2.2s ease-in-out infinite;
+    }
+
+    .floating-phone-btn:nth-child(1) { background: linear-gradient(135deg, #16a34a, #15803d); }
+    .floating-phone-btn:nth-child(2) { background: linear-gradient(135deg, #0284c7, #0369a1); animation-delay: .25s; }
+    .floating-phone-btn:nth-child(3) { background: linear-gradient(135deg, #f59e0b, #d97706); animation-delay: .5s; }
+
+    .floating-phone-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, .32);
+      filter: brightness(1.05);
+    }
+
+    .floating-phone-btn i {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.18);
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+
+    @keyframes floatingPhonePulse {
+      0%, 100% { box-shadow: 0 14px 30px rgba(15, 23, 42, .25), 0 0 0 0 rgba(34, 197, 94, .20); }
+      50% { box-shadow: 0 16px 34px rgba(15, 23, 42, .30), 0 0 0 10px rgba(34, 197, 94, 0); }
+    }
+
+    @media (max-width: 640px) {
+      .floating-phone-stack {
+        left: .65rem;
+        bottom: .65rem;
+        gap: .45rem;
+      }
+
+      .floating-phone-btn {
+        min-width: 156px;
+        padding: .65rem .8rem;
+        font-size: .78rem;
+      }
+
+      .floating-phone-btn i {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
   </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
@@ -216,7 +292,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <!-- Logo -->
       <a href="#" class="flex items-center gap-3">
         <!-- EDITABLE LOGO SIZE HERE -->
-        <img src="https://ik.imagekit.io/mkek1asn5/al-fahd-saad/logo2.webp" alt="Logo" style="width: 80px; height: 80px;" class="object-contain">
+        <img src="https://ik.imagekit.io/mkek1asn5/images/andlaus-logo.webp" alt="Logo" style="width: 80px; height: 80px;" class="object-contain">
         <div>
           <h1 class="text-xl font-bold text-brand-900 leading-none">نقل عفش</h1>
           <p class="text-xs text-brand-600 font-bold tracking-widest mt-1">نقل عفش آمن</p>
@@ -510,7 +586,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
         <!-- EDITABLE LOGO SIZE HERE -->
         <img src="https://ik.imagekit.io/mkek1asn5/al-fahd-saad/logo.webp" class="object-contain" style="width: 50px; height: 50px;">
-        <span class="text-2xl font-bold">الشركة المتخصصة</span>
+        <span class="text-2xl font-bold">الأندلس إكسبريس</span>
       </div>
       <p class="text-sm text-brand-100 leading-relaxed max-w-sm mx-auto md:mx-0">
         شريكك الموثوق في رحلة الانتقال. نجمع بين الخبرة الطويلة والتكنولوجيا الحديثة لنقدم لك تجربة نقل خالية من المتاعب والمفاجآت.
@@ -531,7 +607,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="space-y-4 text-sm">
         <li class="flex items-center justify-center md:justify-start gap-3">
           <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-accent-400"><i class="fas fa-phone-alt"></i></div>
-          <span class="font-bold text-white dir-ltr">01030293959</span>
+          <a href="tel:01217796111" data-direct-call onclick="trackPhoneCall('01217796111','footer')" class="font-bold text-white" dir="ltr">01217796111</a>
+        </li>
+        <li class="flex items-center justify-center md:justify-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-accent-400"><i class="fas fa-phone-alt"></i></div>
+          <a href="tel:01027898656" data-direct-call onclick="trackPhoneCall('01027898656','footer')" class="font-bold text-white" dir="ltr">01027898656</a>
+        </li>
+        <li class="flex items-center justify-center md:justify-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-accent-400"><i class="fas fa-phone-alt"></i></div>
+          <a href="tel:01108507883" data-direct-call onclick="trackPhoneCall('01108507883','footer')" class="font-bold text-white" dir="ltr">01108507883</a>
         </li>
         <li class="flex items-center justify-center md:justify-start gap-3">
           <div class="w-8 h-8 rounded-full bg-brand-800 flex items-center justify-center text-accent-400"><i class="fab fa-whatsapp"></i></div>
@@ -541,15 +625,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
   <div class="text-center mt-12 pt-8 border-t border-brand-800 text-xs text-brand-200">
-    &copy; 2025 الشركة المتخصصة لنقل الأثاث. جميع الحقوق محفوظة.
+    &copy; 2025 الأندلس إكسبريس لنقل الأثاث. جميع الحقوق محفوظة.
   </div>
 </footer>
 
-<!-- ================== FLOATING CALL BUTTON (PULSE) ================== -->
-<button onclick="openCallModal()" class="fixed bottom-4 left-4 z-50 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-2xl transition-transform hover:scale-105 flex items-center gap-2 group animate-pulse">
-  <i class="fas fa-phone-alt text-xl"></i>
-  <span class="font-bold text-sm">اتصل الآن</span>
-</button>
+<!-- ================== THREE FLOATING DIRECT-CALL NUMBERS ================== -->
+<div class="floating-phone-stack" aria-label="أرقام الاتصال السريع">
+  <a href="tel:01217796111"
+     data-direct-call
+     class="floating-phone-btn"
+     onclick="trackPhoneCall('01217796111','floating')"
+     aria-label="اتصل على 01217796111">
+    <i class="fas fa-phone-alt"></i>
+    <span>01217796111</span>
+  </a>
+
+  <a href="tel:01027898656"
+     data-direct-call
+     class="floating-phone-btn"
+     onclick="trackPhoneCall('01027898656','floating')"
+     aria-label="اتصل على 01027898656">
+    <i class="fas fa-phone-alt"></i>
+    <span>01027898656</span>
+  </a>
+
+  <a href="tel:01108507883"
+     data-direct-call
+     class="floating-phone-btn"
+     onclick="trackPhoneCall('01108507883','floating')"
+     aria-label="اتصل على 01108507883">
+    <i class="fas fa-phone-alt"></i>
+    <span>01108507883</span>
+  </a>
+</div>
 
 <!-- ================== MODAL ================== -->
 <div id="callModal" class="fixed inset-0 z-[100] hidden backdrop-blur-md" role="dialog" aria-modal="true">
@@ -563,10 +671,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <h3 class="text-2xl font-bold text-brand-900 mb-2">تحدث معنا</h3>
         <p class="text-slate-500 text-sm mb-8">احصل على استشارة مجانية وعرض سعر فوري.</p>
-        <a href="tel:01030293959" onclick="closeCallModal()" class="block w-full bg-brand-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition-all hover:-translate-y-1 mb-3 flex items-center justify-center gap-2">
-          <i class="fas fa-phone-alt"></i>
-          اتصال مباشر: 01030293959
-        </a>
+        <div class="space-y-3 mb-3">
+          <a href="tel:01217796111" data-direct-call onclick="trackPhoneCall('01217796111','modal'); closeCallModal();" class="block w-full bg-brand-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2" dir="ltr">
+            <i class="fas fa-phone-alt"></i>
+            <span>01217796111</span>
+          </a>
+          <a href="tel:01027898656" data-direct-call onclick="trackPhoneCall('01027898656','modal'); closeCallModal();" class="block w-full bg-brand-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2" dir="ltr">
+            <i class="fas fa-phone-alt"></i>
+            <span>01027898656</span>
+          </a>
+          <a href="tel:01108507883" data-direct-call onclick="trackPhoneCall('01108507883','modal'); closeCallModal();" class="block w-full bg-brand-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition-all hover:-translate-y-1 flex items-center justify-center gap-2" dir="ltr">
+            <i class="fas fa-phone-alt"></i>
+            <span>01108507883</span>
+          </a>
+        </div>
         <button onclick="closeCallModal()" class="w-full py-3 text-slate-400 font-bold hover:text-slate-600 text-sm">إلغاء</button>
       </div>
     </div>
@@ -626,6 +744,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       });
   }
 
+
+  // --- Individual phone-call tracking ---
+  function trackPhoneCall(number, source) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'phone_call_click',
+      phone_number: number,
+      call_source: source,
+      link_url: 'tel:' + number
+    });
+  }
+
   // --- Modal Logic ---
   const modal = document.getElementById('callModal');
   const modalContent = document.getElementById('callModalContent');
@@ -645,7 +775,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    if (!link.closest('#callModal')) {
+    if (!link.closest('#callModal') && !link.hasAttribute('data-direct-call')) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         openCallModal();
